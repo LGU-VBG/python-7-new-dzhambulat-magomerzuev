@@ -1,18 +1,28 @@
+# Задача 1
+
 def merge_lists_to_dict(keys, values):
-    result_dict = dict(zip(key, val))
-    return result_dict
+    return dict(zip(keys, values))
 
 
-key = ['a', 'b', 'c']
-val = [1, 2, 3]
+keys = ['a', 'b', 'c']
+values = [1, 2, 3]
 
 
-merg = merge_lists_to_dict(key, val)
+result = merge_lists_to_dict(keys=keys, values=values)
+print(result)
 
+result2 = merge_lists_to_dict(['x', 'y'], values=[10, 20])
+print(result2)
 
-print(merg)
-# Вызов функции с использованием аргументов с ключевыми словами
-result = merge_lists_to_dict(list1=[1, 2, 3], list2=[4, 5, 6])
+#Задача 2
 
-# Второй вызов функции с одним позиционным аргументом и одним аргументом с ключевым словом
-result2 = merge_lists_to_dict([1, 2, 3], list2=[4, 5, 6])
+def update_car_info(**kwargs):
+    car_info = kwargs
+    
+    car_info['is_available'] = True
+    
+    return car_info
+
+result = update_car_info(brand='Toyota', price=30000)
+
+print(result)
